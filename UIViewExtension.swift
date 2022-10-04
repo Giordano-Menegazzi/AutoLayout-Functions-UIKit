@@ -55,27 +55,27 @@ extension UIView {
     
     // MARK: - Center anchoring functions
     /// This function anchors the center to the superviews center X anchor with an optional custom padding
-    func anchorCenterToXAxisSuperview(with padding: CGFloat? = nil) {
+    func anchorCenterToXAxisSuperview(padding: CGFloat? = nil) {
         guard let superViewCenterXanchor = superview?.centerXAnchor else { return }
         translatesAutoresizingMaskIntoConstraints = false
         centerXAnchor.constraint(equalTo: superViewCenterXanchor, constant: padding ?? 0).isActive = true
     }
     
     /// This function anchors the center to the superviews center Y anchor with an optional custom padding
-    func anchorCenterToYAxisSuperview(with padding: CGFloat? = nil) {
+    func anchorCenterToYAxisSuperview(padding: CGFloat? = nil) {
         guard let superViewCenterYanchor = superview?.centerYAnchor else { return }
         translatesAutoresizingMaskIntoConstraints = false
         centerYAnchor.constraint(equalTo: superViewCenterYanchor, constant: padding ?? 0).isActive = true
     }
     
     /// This function anchors the views center to another views X center
-    func anchorCenterXaxisToXAxisOf(view: UIView, with padding: CGFloat? = nil) {
+    func anchorCenterXaxisToXAxisOf(view: UIView, padding: CGFloat? = nil) {
         translatesAutoresizingMaskIntoConstraints = false
         centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: padding ?? 0).isActive = true
     }
     
     /// This function anchors the views center to another views Y center
-    func anchorCenterYaxisToYAxisOf(view: UIView, with padding: CGFloat? = nil) {
+    func anchorCenterYaxisToYAxisOf(view: UIView, padding: CGFloat? = nil) {
         translatesAutoresizingMaskIntoConstraints = false
         centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: padding ?? 0).isActive = true
     }
@@ -124,13 +124,13 @@ extension UIView {
     
     // MARK: - Fill superView anchoring functions
     /// This function anchors the view to it's superview safe area
-    func fillSuperviewToSafeArea(_ padding: UIEdgeInsets = .zero) {
+    func fillSuperviewToSafeArea(padding: UIEdgeInsets = .zero) {
         guard let superview = superview else { return }
         anchor(top: superview.safeAreaLayoutGuide.topAnchor, leading: superview.safeAreaLayoutGuide.leadingAnchor, bottom: superview.safeAreaLayoutGuide.bottomAnchor, trailing: superview.safeAreaLayoutGuide.trailingAnchor, padding: padding)
     }
     
     /// This function anchors the view to it's superview
-    func fillSuperview(_ padding: UIEdgeInsets = .zero) {
+    func fillSuperview(padding: UIEdgeInsets = .zero) {
         guard let superview = superview else { return }
         anchor(top: superview.topAnchor, leading: superview.leadingAnchor, bottom: superview.bottomAnchor, trailing: superview.trailingAnchor, padding: padding)
     }
