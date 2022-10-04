@@ -81,9 +81,9 @@ extension UIView {
     }
     
     /// This function anchors the center to the superviews center X and Y anchors
-    func anchorCenterInSuperview() {
-        anchorCenterToXAxisSuperview()
-        anchorCenterToYAxisSuperview()
+    func anchorCenterInSuperview(xPadding: CGFloat? = nil, yPadding: CGFloat? = nil) {
+        anchorCenterToXAxisSuperview(with: xPadding ?? 0)
+        anchorCenterToYAxisSuperview(with: yPadding ?? 0)
     }
     
     
